@@ -5,7 +5,6 @@ list = []
 for i in range(1, 101):
     list.append(i)
 guess_number = random.choice(list)
-print(f"Psst the answer is {guess_number}")
 
 difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ")
 
