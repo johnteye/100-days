@@ -43,7 +43,8 @@ while game_should_continue:
 
     is_correct = check_answer(guess, a_follower_count, b_follower_count)
 
-    clear
+    clear()
+    print(logo)
 
     if is_correct:
         score +=1
