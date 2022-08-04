@@ -46,4 +46,3 @@ elif difficulty =="hard":
 else:
     print("Select an appropriate difficulty")
 
-
