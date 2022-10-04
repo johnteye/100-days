@@ -1,10 +1,8 @@
-# from turtle import Turtle
+from turtle import Turtle, Screen
+jimmy = Turtle()
+jimmy.shape("arrow")
+print(jimmy)
 
-# timmy = Turtle()
-# print(timmy)
-from prettytable import PrettyTable
-table = PrettyTable()
-table.add_column("Pokumon names", ["Flarebaze" , "Sringringaer", "Magazine"])
-table.add_column("Pokumon types", ["Fire", "Water", "Grass"])
-
-print(table)
+my_screen = Screen()
+print(my_screen.canvheight)
+my_screen.exitonclick()
