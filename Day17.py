@@ -1,22 +1,17 @@
-question_data = [
-{"text": "A slug's blood is green.", "answer": "True"},
-{"text": "The loudest animal is the African Elephant.", "answer": "False"},
-{"text": "Approximately one quarter of human bones are in the feet.", "answer": "True"},
-{"text": "The total surface area of a human lungs is the size of a football pitch.", "answer": "True"},
-{"text": "In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.", "answer": "True"},
-{"text": "In London, UK, if you happen to die in the House of Parliament, you are entitled to a state funeral.", "answer": "False"},
-{"text": "It is illegal to pee in the Ocean in Portugal.", "answer": "True"},
-{"text": "You can lead a cow down stairs but not up stairs.", "answer": "False"},
-{"text": "Google was originally called 'Backrub'.", "answer": "True"},
-{"text": "Buzz Aldrin's mother's maiden name was 'Moon'.", "answer": "True"},
-{"text": "No piece of square dry paper can be folded in half more than 7 times.", "answer": "False"},
-{"text": "A few ounces of chocolate can to kill a small dog.", "answer": "True"}
-]
+from data import question_data
+from question_model import Question
+from quiz_brain import QuizBrain
 
-class Question:
-    def __init__(self, text, answer):
-        self.text = text
-        self.answer = answer
+question_bank = []
+for question in question_data:
+    question_text = question["text"]
+    question_answer = question["answer"]
+    new_question = Question(question_text, question_answer)
+    question_bank.append(new_question)
 
-new_q = Question("why are you coded", "that's just me")
-print(new_q.text, new_q.answer)
+
+quiz = QuizBrain(question_bank)
+while quiz.still_has_questions():
+    quiz.next_question()
+
+print(f"You've completed the quiz \n Your final score was:  {quiz.score}/ {quiz.question_number}")
